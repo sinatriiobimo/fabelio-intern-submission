@@ -1,16 +1,18 @@
 import './assets/css/app.css';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Homepage from 'pages/Homepage';
-import ProductDetails from 'pages/ProductDetails';
-
+import Details from 'pages/Details';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/" component={Homepage}/>
-        <Route path="/categories/:id" component={ProductDetails}/>
+        <Switch>
+          <Route exact path="/" component={Homepage}/>
+          <Route exact path="/categories/:idc" component={Details}/>
+          <Route path="/categories/:idc/products/:id" component={Details}/>
+        </Switch>
       </Router>
     </div>
   );

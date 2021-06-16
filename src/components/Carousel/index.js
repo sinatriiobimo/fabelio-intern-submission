@@ -66,7 +66,6 @@ export default function index({children, refContainer}) {
     const onDragMove = useCallback((e) => {
             e = e || window.event
             e.preventDefault()
-            console.log(e)
 
             if(e.type==="touchmove") {
                 posX2.current = posX1.current - e.touches[0].clientX
@@ -82,7 +81,6 @@ export default function index({children, refContainer}) {
     const onDragEnd = useCallback((e) => {
             e = e || window.event
             e.preventDefault()
-            console.log(e)
 
             posFinal.current = refDragHandler.current.offsetLeft
             if(posFinal.current - posInitial.current < -threshold) {
@@ -100,7 +98,6 @@ export default function index({children, refContainer}) {
     const onDragStart = useCallback((e) => {
             e = e || window.event
             e.preventDefault()
-            console.log(e)
 
             posInitial.current = refDragHandler.current.offsetLeft
             if(e.type==="touchstart") {
