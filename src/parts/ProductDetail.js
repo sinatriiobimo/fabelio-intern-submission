@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import 'helpers/currency';
+import {movingPrevArray} from 'helpers/movingPrevArray';
 
 export default function ProductDetail({data}) {
   const [slider, setSlider] = useState(() => data?.image?.[0] || "")
+
+  console.log(data)
 
     return (
       <section className="container mx-auto">
@@ -58,7 +61,6 @@ export default function ProductDetail({data}) {
               <li className="capitalize"><span className="text-md font-semibold">Material: </span>{data.material}</li>
             </ul>
           </div>
-          {/* {data.description ? ReactHtmlParser(data.description) : ""} */}
         </div>
       </div>
     </section>

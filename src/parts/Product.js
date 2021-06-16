@@ -19,6 +19,7 @@ function Loading() {
 
 export default function Product() {
   const {data, status, error, run, isLoading} = useAsync();
+  const remainArray = [];
   const refContainer = useRef(null);
 
     useEffect(() => {
@@ -78,7 +79,6 @@ export default function Product() {
                           <span className="square-box text-md text-center font-bold text-gray-800 mt-1 block capitalize">Sale</span>
                         )
                       } 
-
                   <Link to={`/categories/${product.idc}/products/${product.id}`} className="stretched-link"></Link>
               </div>
               )})}

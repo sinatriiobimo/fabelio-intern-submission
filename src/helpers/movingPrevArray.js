@@ -1,11 +1,9 @@
-export function movingPrevArray(src, dest)  {
-    let i = 0;
-    while ( i < src.length ) {
-        var item = src[i];
-        if (item.selected) {
-            src.splice(i,1);
-            dest.push(item);
-        }
-        else i++;
+export function movingPrevArray(arr, prod) {
+    let newArray = [...arr];
+    const index = newArray.findIndex((element) => element === prod)
+
+    if(index !== -1) {
+        newArray.splice(index, 1)
+        return newArray
     }
 }
